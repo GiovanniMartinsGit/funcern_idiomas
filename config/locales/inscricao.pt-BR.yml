@@ -6,4 +6,30 @@ pt-BR:
         other: Inscricoes
     attributes:
       inscricao:
+<<<<<<< HEAD
+=======
+        nome: Nome
+        email: E-mail
+        sexo: Sexo
+        data_nascimento: Data de Nascimento
+        cidade: Cidade
+        nome_pai: Nome do Pai
+        nome_mae: Nome da Mãe
+        rg: RG
+        cpf: CPF
+        orgao_expedidor: Órgão Expedidor
+        data_expedicao: Data de Expedição
+        celular: Celular
+        telefone: Telefone
+        residencial: Residencial
+        forma_pagamento: Forma de Pagamento
+        secretaria: Secretaria
+        data_pagamento: Data de Pagamento
+        observacao: Observação
+        endereco: Endereco
+        bairro: Bairro
+        cep: CEP
+        estado: Estado 
+      inscricao:
+>>>>>>> Feat/luiz
         
