@@ -6,8 +6,6 @@ pt-BR:
         other: Inscricoes
     attributes:
       inscricao:
-<<<<<<< HEAD
-=======
         nome: Nome
         email: E-mail
         sexo: Sexo
@@ -31,5 +29,4 @@ pt-BR:
         cep: CEP
         estado: Estado 
       inscricao:
->>>>>>> Feat/luiz
         
