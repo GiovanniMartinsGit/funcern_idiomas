@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :inscricoes do
+    collection do
+   get 'search'
+  post 'datatable'
+  end
+end
   resources :audits, only: :show
   match '500', :to => 'errors#internal_server_error', :via => :all
   match '422', :to => 'errors#unacceptable', :via => :all

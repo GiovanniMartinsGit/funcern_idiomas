@@ -1,0 +1,9 @@
+pt-BR:
+  activerecord:
+    models:
+      inscricao:
+        one: Inscricao
+        other: Inscricoes
+    attributes:
+      inscricao:
+        
