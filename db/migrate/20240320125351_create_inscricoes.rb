@@ -4,7 +4,6 @@ class CreateInscricoes < ActiveRecord::Migration[7.0]
       t.string :nome
       t.string :sexo
       t.string :data_nascimento
-      t.string :cidade
       t.string :nome_pai
       t.string :nome_mae
       t.string :rg
@@ -12,12 +11,7 @@ class CreateInscricoes < ActiveRecord::Migration[7.0]
       t.string :orgao_expedidor
       t.date :data_expedicao
       t.string :celular
-      t.string :telefone
-      t.string :residencial
-      t.string :forma_pagamento
-      t.string :secretaria
-      t.date :data_pagamento
-      t.string :observacao
+      t.string :telefone_residencial
       t.datetime :deleted_at
 
       t.timestamps
