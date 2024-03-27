@@ -1,17 +1,20 @@
 Rails.application.routes.draw do
+  resources :enderecos
+  resources :cidades
+  resources :estados
   resources :inscricoes do
     collection do
-   get 'search'
-  post 'datatable'
+      get 'search'
+      post 'datatable'
+    end
   end
-end
 
-resources :cursos do
-  collection do
- get 'search'
-post 'datatable'
+  resources :cursos do
+    collection do
+      get 'search'
+      post 'datatable'
+    end
   end
-end
 
   resources :audits, only: :show
   match '500', :to => 'errors#internal_server_error', :via => :all

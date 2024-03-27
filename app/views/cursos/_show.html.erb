@@ -39,3 +39,8 @@
 <div class="row mb-7 mt-3">
   <%= render partial: "audits/table", locals: {audits: resource.try(:own_and_associated_audits), show_collapse: 'show'} %>
 </div>
+
+<div class="row mb-7 mt-3">
+<%binding.break%>
+  <%= render partial: "inscricoes/table", locals: {curso_id: resource.id, show_collapse: 'show', remote: true} %>
+</div>

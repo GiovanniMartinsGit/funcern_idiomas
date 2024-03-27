@@ -2,6 +2,8 @@
 
 <% id ||=Time.now.to_i %>
 <% remote ||=remote %>
+<% curso_id||= curso_id %>
+<%binding.break%>
 <% datatable_url ||=datatable_inscricoes_url(remote: remote, format: 'json' ) %>
 <% link_to_new ||=new_inscricao_url() %>
 
