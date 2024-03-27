@@ -5,8 +5,6 @@ Rails.application.routes.draw do
   post 'datatable'
   end
 end
-<<<<<<< HEAD
-=======
 
 resources :cursos do
   collection do
@@ -15,7 +13,6 @@ post 'datatable'
   end
 end
 
->>>>>>> origin/Feat/luiz
   resources :audits, only: :show
   match '500', :to => 'errors#internal_server_error', :via => :all
   match '422', :to => 'errors#unacceptable', :via => :all
