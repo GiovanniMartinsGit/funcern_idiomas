@@ -1,14 +1,10 @@
 
 
 
-class Inscricao < ApplicationRecord
+class Curso < ApplicationRecord
 
     # extends ...................................................................
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> origin/Feat/luiz
     # includes ..................................................................
     audited
     acts_as_paranoid
@@ -16,16 +12,10 @@ class Inscricao < ApplicationRecord
     include Searchrable
 
     # security (i.e. attr_accessible) ...........................................
-    enum sexo: { masculino: "masculino", feminino: "feminino" }
-<<<<<<< HEAD
-        
-    # relationships .............................................................
-    
-=======
+
 
     # relationships .............................................................
-    has_one :Curso, class_name: "Curso", foreign_key: "Curso_id"
->>>>>>> origin/Feat/luiz
+    belongs_to :Inscricao, class_name: "Inscricao", foreign_key: "Inscricao_id"
     # validations ...............................................................
     # callbacks .................................................................
     # scopes ....................................................................
@@ -35,7 +25,3 @@ class Inscricao < ApplicationRecord
     # protected instance methods ................................................
     # private instance methods ..................................................
 end
-<<<<<<< HEAD
-    
-=======
->>>>>>> origin/Feat/luiz
