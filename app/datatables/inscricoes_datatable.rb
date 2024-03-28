@@ -58,23 +58,10 @@ class InscricoesDatatable
                             'celular' => column_celular(inscricao),
                         
                                             
-                            'telefone' => column_telefone(inscricao),
+                            'telefone_residencial' => column_telefone_residencial(inscricao),
                         
                                             
-                            'residencial' => column_residencial(inscricao),
-                        
-                                            
-                            'forma_pagamento' => column_forma_pagamento(inscricao),
-                        
-                                            
-                            'secretaria' => column_secretaria(inscricao),
-                        
-                                            
-                            'data_pagamento' => column_data_pagamento(inscricao),
-                        
-                                            
-                            'observacao' => column_observacao(inscricao),
-                        
+                            'pagamento_matricula' => column_pagamento_matricula(inscricao),
                                             
                                             
                             'created_at' => column_created_at(inscricao),
@@ -168,44 +155,16 @@ class InscricoesDatatable
                 end
             
                     
-                def column_telefone(inscricao)
+                def column_telefone_residencial(inscricao)
                     
-                        inscricao.try(:telefone)
-                    
-                end
-            
-                    
-                def column_residencial(inscricao)
-                    
-                        inscricao.try(:residencial)
+                        inscricao.try(:telefone_residencial)
                     
                 end
-            
+          
                     
-                def column_forma_pagamento(inscricao)
+                def column_pagamento_matricula(inscricao)
                     
-                        inscricao.try(:forma_pagamento)
-                    
-                end
-            
-                    
-                def column_secretaria(inscricao)
-                    
-                        inscricao.try(:secretaria)
-                    
-                end
-            
-                    
-                def column_data_pagamento(inscricao)
-                    
-                        inscricao.try(:data_pagamento)
-                    
-                end
-            
-                    
-                def column_observacao(inscricao)
-                    
-                        inscricao.try(:observacao)
+                        inscricao.try(:pagamento_matricula)
                     
                 end
             
@@ -258,7 +217,11 @@ class InscricoesDatatable
         end
 
         def query
+          if params[:curso_id].present?  
+            'Inscricao.joins(:curso).where(curso_id: params[:curso_id])'
+          else
             'Inscricao'
+          end
         end
 
         def fetch

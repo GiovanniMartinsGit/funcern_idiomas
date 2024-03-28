@@ -3,8 +3,7 @@
 <% id ||=Time.now.to_i %>
 <% remote ||=remote %>
 <% curso_id||= curso_id %>
-<%binding.break%>
-<% datatable_url ||=datatable_inscricoes_url(remote: remote, format: 'json' ) %>
+<% datatable_url ||=datatable_inscricoes_url(remote: remote, curso_id: curso_id, format: 'json' ) %>
 <% link_to_new ||=new_inscricao_url() %>
 
 
@@ -69,22 +68,10 @@
                         <th><%= model_class.human_attribute_name(:celular) %></th>
                     
                                     
-                        <th><%= model_class.human_attribute_name(:telefone) %></th>
-                    
-                                    
-                        <th><%= model_class.human_attribute_name(:residencial) %></th>
-                    
-                                    
-                        <th><%= model_class.human_attribute_name(:forma_pagamento) %></th>
-                    
-                                    
-                        <th><%= model_class.human_attribute_name(:secretaria) %></th>
-                    
-                                    
-                        <th><%= model_class.human_attribute_name(:data_pagamento) %></th>
-                    
-                                    
-                        <th><%= model_class.human_attribute_name(:observacao) %></th>
+                        <th><%= model_class.human_attribute_name(:telefone_residencial) %></th>
+  
+
+                        <th><%= model_class.human_attribute_name(:pagamento_matricula) %></th>
                     
                 <th class="text-end min-w-100px"><%= t("helpers.actions") %></th>
             </tr>
@@ -157,22 +144,10 @@
                             { "data": "celular" },
                         	
                                             
-                            { "data": "telefone" },
+                            { "data": "telefone_residencial" },
                         	
-                                            
-                            { "data": "residencial" },
-                        	
-                                            
-                            { "data": "forma_pagamento" },
-                        	
-                                            
-                            { "data": "secretaria" },
-                        	
-                                            
-                            { "data": "data_pagamento" },
-                        	
-                                            
-                            { "data": "observacao" },
+                                                                        
+                            { "data": "pagamento_matricula" },
                         	
                     { "data": "opcoes", "orderable": false }
                 ],

@@ -1,9 +1,5 @@
 <%- model_class=Inscricao -%>
 
-
-
-
-
 <!--begin::Accordion-->
 <div class="accordion" id="kt_accordion_<% model_class.model_name %>">
   <div class="accordion-item">
@@ -14,7 +10,7 @@
     </h2>
     <div id="kt_accordion_<% model_class.model_name %>_body_1" class="accordion-collapse collapse <%= show_collapse %>" aria-labelledby="kt_accordion_<% model_class.model_name %>_header_1" data-bs-parent="#kt_accordion_<% model_class.model_name %>">
       <div class="accordion-body">
-        <%= render partial: "inscricoes/datatable" , locals: {remote: remote} %>
+        <%= render partial: "inscricoes/datatable" , locals: {remote: remote, curso_id: curso_id} %>
       </div>
     </div>
   </div>
