@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   resources :enderecos do
     collection do
       get 'search'
@@ -34,6 +35,10 @@ Rails.application.routes.draw do
       post 'datatable'
     end
   end
+
+  devise_for :usuarios, controllers: { sessions: 'usuarios/sessions', registrations: 'usuarios/registrations' }
+  
+  resources :usuarios, skip: [:sessions, :registrations]
 
   resources :audits, only: :show
   match '500', :to => 'errors#internal_server_error', :via => :all
