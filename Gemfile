@@ -43,7 +43,7 @@ group :development, :test do
     gem "selenium-webdriver"
     gem "webdrivers"
 
-    # Utilidades 
+    # Utilidades
     gem "letter_opener"
 
     # Segurança
@@ -58,10 +58,10 @@ group :development, :test do
 end
 
 
-# Essencial 
+# Essencial
 gem "sidekiq"
 
-# Configuração 
+# Configuração
 gem 'figaro'
 
 # Utilidades
@@ -77,6 +77,7 @@ gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 gem 'protokoll'
 gem 'seed_migration'
+gem 'devise'
 
 # Segurança
 gem 'rack-attack'
