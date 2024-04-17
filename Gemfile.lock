@@ -79,6 +79,7 @@ GEM
     auto_increment (1.6.1)
       activerecord (>= 6.0)
       activesupport (>= 6.0)
+    bcrypt (3.1.20)
     bindex (0.8.1)
     bootsnap (1.18.3)
       msgpack (~> 1.2)
@@ -104,6 +105,12 @@ GEM
     debug (1.9.1)
       irb (~> 1.10)
       reline (>= 0.3.8)
+    devise (4.9.4)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0)
+      responders
+      warden (~> 1.2.3)
     diff-lcs (1.5.1)
     erubi (1.12.0)
     exception_notification (4.5.0)
@@ -116,12 +123,16 @@ GEM
       railties (>= 5.0.0)
     faker (3.2.3)
       i18n (>= 1.8.11, < 2)
+    ffi (1.16.3)
     figaro (1.2.0)
       thor (>= 0.14.0, < 2)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.4)
       concurrent-ruby (~> 1.0)
+    image_processing (1.12.2)
+      mini_magick (>= 4.9.5, < 5)
+      ruby-vips (>= 2.0.17, < 3)
     importmap-rails (2.0.1)
       actionpack (>= 6.0.0)
       activesupport (>= 6.0.0)
@@ -160,8 +171,18 @@ GEM
     marcel (1.0.4)
     matrix (0.4.2)
     method_source (1.0.0)
+    mini_magick (4.12.0)
     mini_mime (1.1.5)
     minitest (5.22.3)
+    monetize (1.13.0)
+      money (~> 6.12)
+    money (6.19.0)
+      i18n (>= 0.6.4, <= 2)
+    money-rails (1.15.0)
+      activesupport (>= 3.0)
+      monetize (~> 1.9)
+      money (~> 6.13)
+      railties (>= 3.0)
     msgpack (1.7.2)
     net-imap (0.4.10)
       date
@@ -175,6 +196,7 @@ GEM
     nio4r (2.7.0)
     nokogiri (1.16.2-x86_64-linux)
       racc (~> 1.4)
+    orm_adapter (0.5.0)
     pg (1.5.6)
     protokoll (2.0.2)
       rails (>= 4.0)
@@ -227,6 +249,9 @@ GEM
       io-console (~> 0.5)
     request_store (1.6.0)
       rack (>= 1.4)
+    responders (3.1.1)
+      actionpack (>= 5.2)
+      railties (>= 5.2)
     rexml (3.2.6)
     rspec-core (3.13.0)
       rspec-support (~> 3.13.0)
@@ -245,6 +270,8 @@ GEM
       rspec-mocks (~> 3.12)
       rspec-support (~> 3.12)
     rspec-support (3.13.1)
+    ruby-vips (2.2.1)
+      ffi (~> 1.12)
     rubyzip (2.3.2)
     seed_migration (1.2.3)
     selenium-webdriver (4.10.0)
@@ -277,6 +304,8 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    warden (1.2.9)
+      rack (>= 2.0.9)
     web-console (4.2.1)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -313,14 +342,17 @@ DEPENDENCIES
   capybara
   cocoon
   debug
+  devise
   exception_notification
   factory_bot_rails
   faker
   figaro
+  image_processing (>= 1.2)
   importmap-rails
   jbuilder
   kaminari
   letter_opener
+  money-rails
   pg (~> 1.1)
   protokoll
   puma (~> 5.0)
