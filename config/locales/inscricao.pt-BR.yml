@@ -17,7 +17,8 @@ pt-BR:
                 orgao_expedidor: Órgão Expedidor 
                 data_expedicao: Data Expedição
                 celular: Celular
-                telefone_residencial: Telefone Residencial 
+                telefone_residencial: Telefone Residencial
+                pagamento_matricula: Matricula Paga?
                 deleted_at: Deleted_at
                 created_at: Created_at 
                 updated_at: Updated_at 

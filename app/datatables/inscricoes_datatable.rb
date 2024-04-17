@@ -164,7 +164,7 @@ class InscricoesDatatable
                     
                 def column_pagamento_matricula(inscricao)
                     
-                        inscricao.try(:pagamento_matricula)
+                        inscricao.try(:pagamento_matricula) ? 'Pago' : 'Não Paga'
                     
                 end
             

@@ -80,3 +80,9 @@ gem 'seed_migration'
 
 # Segurança
 gem 'rack-attack'
+
+gem 'devise'
+gem "image_processing", ">= 1.2"
+
+
+gem 'money-rails'
