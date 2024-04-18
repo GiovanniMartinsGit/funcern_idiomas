@@ -1,9 +1,9 @@
 class CursosDatatable
-    delegate :params, :h, :t, :link_to, :button_to, :content_tag, 
-        :curso_path, 
+    delegate :params, :h, :t, :link_to, :button_to, :content_tag,
+        :curso_path,
         :edit_curso_path, to: :@view
-  
-    
+
+
     def initialize(view)
         @view = view
         @remote = params[:remote] == 'true'
@@ -18,85 +18,96 @@ class CursosDatatable
         }
     end
 
-    private 
+    private
         def data
             cursos.each_with_index.map do |curso, index|
                 {
                     'index' => (index + 1) + ((page - 1) * per_page),
-                                            
-                                            
+
+
                             'idioma' => column_idioma(curso),
-                        
-                                            
+
+
                             'nivel' => column_nivel(curso),
-                        
-                                            
+
+
                             'dia' => column_dia(curso),
-                        
-                                            
+
+
                             'turno' => column_turno(curso),
-                        
-                                            
+
+
+                            'valor' => column_valor(curso),
+
+
                             'created_at' => column_created_at(curso),
-                        
-                                            
+
+
                             'updated_at' => column_updated_at(curso),
-                        
-                                            
-                    
+
+
+
                     'opcoes' => column_opcoes(curso)
                 }
             end
         end
 
 
-                    
-                    
-                def column_idioma(curso)
-                    
-                        curso.try(:idioma)
-                    
-                end
-            
-                    
-                def column_nivel(curso)
-                    
-                        curso.try(:nivel)
-                    
-                end
-            
-                    
-                def column_dia(curso)
-                    
-                        curso.try(:dia)
-                    
-                end
-            
-                    
-                def column_turno(curso)
-                    
-                        curso.try(:turno)
-                    
-                end
-            
-                    
-                def column_created_at(curso)
-                    
-                        curso.try(:created_at).try(:to_fs)
-                    
-                end
-            
-                    
-                def column_updated_at(curso)
-                    
-                        curso.try(:updated_at).try(:to_fs)
-                    
-                end
-            
-                    
-        
 
-        
+
+                def column_idioma(curso)
+
+                        curso.try(:idioma)
+
+                end
+
+
+                def column_nivel(curso)
+
+                        curso.try(:nivel)
+
+                end
+
+
+                def column_dia(curso)
+
+                        curso.try(:dia)
+
+                end
+
+
+
+                def column_turno(curso)
+
+                        curso.try(:turno)
+
+                end
+
+
+                def column_valor(curso)
+
+                        curso.try(:valor).try(:format)
+
+                 end
+
+
+                def column_created_at(curso)
+
+                        curso.try(:created_at).try(:to_fs)
+
+                end
+
+
+                def column_updated_at(curso)
+
+                        curso.try(:updated_at).try(:to_fs)
+
+                end
+
+
+
+
+
         def column_opcoes(curso)
             opcoes = ""
 
@@ -150,13 +161,13 @@ class CursosDatatable
         def page
             params[:start].to_i / per_page + 1
         end
-    
+
         def per_page
             params[:length].to_i.positive? ? params[:length].to_i : 10
         end
-    
+
         def sort_column
-            columns = ["id", "idioma", "nivel", "dia", "turno", "created_at", "updated_at"]
+            columns = ["id", "idioma", "nivel", "dia", "turno","valor", "created_at", "updated_at"]
             columns[params[:order]['0'][:column].to_i]
         end
 
